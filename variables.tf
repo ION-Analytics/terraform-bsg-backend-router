@@ -1,6 +1,6 @@
 # required
-variable "certificate_domain_name" {
-  description = "DNS domain name to use for SSL certificate"
+variable "certificate_arn" {
+  description = "ARN for the SSL certificate"
   type        = string
 }
 

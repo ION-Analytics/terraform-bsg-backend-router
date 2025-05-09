@@ -1,6 +1,5 @@
 module "alb" {
-  source  = "mergermarket/alb/acuris"
-  version = "2.1.0"
+  source  = "github.com:ION-Analytics/terraform-bsg-alb.git"
 
   name   = format("%s-%s-router", var.env, var.component)
   vpc_id = var.platform_config["vpc"]
@@ -15,7 +14,7 @@ module "alb" {
     ],
     var.extra_security_groups,
   )
-  certificate_domain_name  = var.certificate_domain_name
+  certificate_arn  = var.certificate_arn
   run_data                 = var.run_data
   default_target_group_arn = aws_alb_target_group.default_target_group.arn
   access_logs_bucket       = lookup(var.platform_config, "elb_access_logs_bucket", "")
