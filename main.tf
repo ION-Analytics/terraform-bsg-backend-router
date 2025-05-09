@@ -1,5 +1,5 @@
 module "alb" {
-  source  = "https://github.com/ION-Analytics/terraform-bsg-alb.git"
+  source  = "ssh://git@github.com:ION-Analytics/terraform-bsg-alb.git"
 
   name   = format("%s-%s-router", var.env, var.component)
   vpc_id = var.platform_config["vpc"]
